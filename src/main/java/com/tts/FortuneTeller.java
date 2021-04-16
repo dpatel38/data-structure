@@ -10,16 +10,32 @@ public class FortuneTeller {
 
         System.out.println("What is your first name? ");
         String firstName = input.next();
+        if (firstName.equalsIgnoreCase("quit")) {
+            System.out.println("Nobody likes a quitter...");
+            System.exit(0);
+        }
 
         System.out.println("What is your last name? ");
         String lastName = input.next();
+        if (lastName.equalsIgnoreCase("quit")) {
+            System.out.println("Nobody likes a quitter...");
+            System.exit(0);
+        }
 
         System.out.println("What is your age? ");
         String age = input.next();
+        if (age.equalsIgnoreCase("quit")) {
+            System.out.println("Nobody likes a quitter...");
+            System.exit(0);
+        }
         int numberAge = Integer.parseInt(age);
 
         System.out.println("What is your birth month? (1-12) ");
         String birthMonth = input.next();
+        if (birthMonth.equalsIgnoreCase("quit")) {
+            System.out.println("Nobody likes a quitter...");
+            System.exit(0);
+        }
         int bMonth = Integer.parseInt(birthMonth);
 
         System.out.println("What is your favorite ROYGBIV color? If you don't know what ROYGBIV is? Type Help!");
@@ -28,13 +44,17 @@ public class FortuneTeller {
         String needHelp = "";
         while(favColor.equalsIgnoreCase("help")){
             needHelp = "Red, Orange, Yellow, Green, Blue, Indigo, Violet";
-            System.out.println(needHelp);
+            System.out.println("The ROYGBIV colors are " + needHelp);
 
             favColor = input.next();
         }
 
         System.out.println("How many siblings do you have? ");
         String numSibling = input.next();
+        if (numSibling.equalsIgnoreCase("quit")) {
+            System.out.println("Nobody likes a quitter...");
+            System.exit(0);
+        }
         int sibling = Integer.parseInt(numSibling);
 
         //Retirement years
@@ -83,6 +103,7 @@ public class FortuneTeller {
             modeOfTransportation = "Corvette";
         }
         System.out.println("Mode of transportation will be " + modeOfTransportation);
+        System.out.println();
 
         //bank balance
         String bankBalance = "";
@@ -101,7 +122,7 @@ public class FortuneTeller {
                 + modeOfTransportation + ".";
         System.out.println(userOutput);
 
-
+        input.close();
 
     }
 }
